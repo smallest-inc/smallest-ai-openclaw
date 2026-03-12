@@ -1,11 +1,11 @@
 ---
 name: smallest-ai
 description: >
-  Ultra-fast text-to-speech and speech-to-text via Smallest AI's Lightning and Pulse models.
+  Ultra-fast text-to-speech and speech-to-text via Smallest AI's Lightning v3.1 and Pulse models.
   Use when the user wants to generate speech, convert text to voice, read text aloud,
   create voice notes, transcribe audio to text, or clone a voice.
-  Sub-100ms latency TTS. 64ms TTFT STT. Supports 30+ languages including Hindi.
-  Voices include emily, jasmine, arman, arnav, mithali.
+  Sub-100ms latency TTS. 64ms TTFT STT. Supports 30+ languages including Hindi and Spanish.
+  Voices include diana, vincent, advika, vivaan, camilla, and 80+ more.
 metadata:
   openclaw:
     emoji: "⚡"
@@ -17,7 +17,7 @@ metadata:
 
 # Smallest AI — Ultra-Fast Voice Suite
 
-Text-to-speech (sub-100ms) via Lightning and speech-to-text (64ms TTFT) via Pulse.
+Text-to-speech (sub-100ms) via Lightning v3.1 and speech-to-text (64ms TTFT) via Pulse.
 
 ## Setup
 
@@ -38,36 +38,41 @@ Text-to-speech (sub-100ms) via Lightning and speech-to-text (64ms TTFT) via Puls
 
 ## Text-to-Speech
 
-Generate speech audio from text. Always use `add_wav_header: true` for playable files.
+Generate speech audio from text using Lightning v3.1 model.
 
 ### Shell (preferred — zero dependencies)
 
 ```bash
-{baseDir}/scripts/tts.sh "Text to speak" --voice emily --rate 24000 --speed 1.0 --lang en
+{baseDir}/scripts/tts.sh "Text to speak" --voice diana --rate 24000 --speed 1.0 --lang en
 ```
 
 ### Python (requires `pip install smallestai` or just `requests`)
 
 ```bash
-python3 {baseDir}/scripts/tts.py "Text to speak" --voice emily --speed 1.0 --lang en --out speech.wav
+python3 {baseDir}/scripts/tts.py "Text to speak" --voice diana --speed 1.0 --lang en --out speech.wav
 ```
 
 ### Voices
 
-| Voice     | Style                      | Best For                    |
-|-----------|----------------------------|-----------------------------|
-| emily     | Female, neutral, clear     | General use, announcements  |
-| jasmine   | Female, warm, expressive   | Storytelling, greetings     |
-| arman     | Male, professional, deep   | Reports, briefings          |
-| arnav     | Male, conversational       | Casual updates, reminders   |
-| mithali   | Female, Hindi-native       | Hindi content, code-switch  |
+| Voice     | Gender | Accent          | Best For                    |
+|-----------|--------|-----------------|-----------------------------|
+| diana     | Female | American        | General use (default)       |
+| vincent   | Male   | American        | Announcements, briefings    |
+| advika    | Female | Indian          | Hindi content, code-switch  |
+| vivaan    | Male   | Indian          | Bilingual English/Hindi     |
+| camilla   | Female | Mexican/Latin   | Spanish content             |
+| zara      | Female | American        | Conversational              |
+| melody    | Female | American        | Storytelling, greetings     |
+| robert    | Male   | American        | Professional, reports       |
+| arjun     | Male   | Indian          | English/Hindi bilingual     |
+| stella    | Female | American        | Expressive, warm            |
 
-Full voice catalog: `{baseDir}/references/voices.md`
+80+ more voices available. List all with: `{baseDir}/scripts/voices.sh`
 
 ### Options
 
-- `--voice <id>`: Voice identifier (default: emily)
-- `--rate <hz>`: Sample rate — 8000 | 16000 | 24000 | 48000 (default: 24000)
+- `--voice <id>`: Voice identifier (default: diana)
+- `--rate <hz>`: Sample rate — 8000 | 16000 | 24000 | 44100 (default: 24000)
 - `--speed <n>`: Playback speed 0.5–2.0 (default: 1.0)
 - `--lang <code>`: Language code (default: en). See `{baseDir}/references/languages.md`
 - `--out <path>`: Output file (default: auto-named `media/tts_<timestamp>.wav`)
@@ -81,19 +86,20 @@ Scripts print `MEDIA: <filepath>` on success. OpenClaw sends this as an audio at
 Supports 30+ languages. Pass `--lang` with ISO code:
 
 ```bash
-{baseDir}/scripts/tts.sh "नमस्ते, कैसे हैं आप?" --voice mithali --lang hi
-{baseDir}/scripts/tts.sh "Bonjour le monde" --voice emily --lang fr
+{baseDir}/scripts/tts.sh "नमस्ते, कैसे हैं आप?" --voice advika --lang hi
+{baseDir}/scripts/tts.sh "Bonjour le monde" --voice diana --lang fr
+{baseDir}/scripts/tts.sh "Hola, buenos días" --voice camilla --lang es
 ```
 
 Code-switching (mixing languages) works automatically — no flag needed:
 
 ```bash
-{baseDir}/scripts/tts.sh "Hey, मुझे meeting remind कर दो" --voice emily --lang hi
+{baseDir}/scripts/tts.sh "Hey, मुझे meeting remind कर दो" --voice advika --lang hi
 ```
 
 ## Speech-to-Text
 
-Transcribe audio files. Supports WAV, MP3, OGG, FLAC.
+Transcribe audio files using Pulse model. Supports WAV, MP3, OGG, FLAC.
 
 ### Shell
 
@@ -128,7 +134,7 @@ Trigger this skill when the user:
 - Asks to "transcribe", "convert speech/audio to text"
 - Mentions "Smallest AI", "Lightning TTS", or "Pulse STT"
 - Needs fast or low-latency speech generation
-- Wants Hindi, multilingual, or code-switched voice output
+- Wants Hindi, Spanish, multilingual, or code-switched voice output
 - Asks to compare TTS providers or benchmark latency
 
 ## Error Handling
