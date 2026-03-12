@@ -22,31 +22,18 @@ Text-to-speech (sub-100ms) via Lightning v3.1 and speech-to-text (64ms TTFT) via
 ## Setup
 
 1. Get API key from https://waves.smallest.ai → click "API Key" in left panel
-2. Configure in openclaw.json:
-
-```json
-{
-  "skills": {
-    "entries": {
-      "smallest-ai": {
-        "apiKey": "your_key_here",
-        "defaultVoiceMale": "vincent",
-        "defaultVoiceFemale": "diana",
-        "defaultLanguage": "en",
-        "defaultSpeed": 1.0,
-        "defaultSampleRate": 24000
-      }
-    }
-  }
-}
+2. Set `SMALLEST_API_KEY` in your environment:
+```bash
+export SMALLEST_API_KEY="your_key_here"
 ```
 
-The agent MUST read the user's config from `skills.entries.smallest-ai` in openclaw.json to determine defaults. If no config is set, use these defaults:
-- `defaultVoiceFemale`: `diana`
-- `defaultVoiceMale`: `vincent`
-- `defaultLanguage`: `en`
-- `defaultSpeed`: `1.0`
-- `defaultSampleRate`: `24000`
+## Defaults
+
+- Default female voice: `diana` (American English)
+- Default male voice: `vincent` (American English)
+- Default language: `en`
+- Default speed: `1.0`
+- Default sample rate: `24000`
 
 ## Voice Selection Rules
 
