@@ -1,6 +1,6 @@
-# ⚡ Smallest AI — OpenClaw Voice Skill
+# Smallest AI — OpenClaw Voice Skill
 
-The fastest TTS/STT skill for [OpenClaw](https://openclaw.ai). Sub-100ms text-to-speech via Lightning. 64ms speech-to-text via Pulse.
+The fastest TTS/STT skill for [OpenClaw](https://openclaw.ai). Sub-100ms text-to-speech via Lightning v3.1. 64ms speech-to-text via Pulse.
 
 > **"My OpenClaw now speaks faster than I can think"** — what you'll say after installing this
 
@@ -23,70 +23,57 @@ clawhub install smallest-ai
 
 # Option 2: Manual
 git clone https://github.com/smallest-inc/smallest-ai-openclaw.git
-cp -r smallest-ai-openclaw ~/.openclaw/workspace/skills/smallest-ai
+cp -r smallest-ai-openclaw ~/.openclaw/skills/smallest-ai
 
 # Set your API key
 export SMALLEST_API_KEY="your_key_here"
 # Get one free at https://waves.smallest.ai
 ```
 
-Then ask your OpenClaw agent to **"refresh skills"** or restart the gateway.
+Then restart the gateway: `openclaw gateway stop && openclaw gateway start`
 
 ## What You Get
 
-### 🗣️ Text-to-Speech (Lightning)
+### Text-to-Speech (Lightning v3.1)
 ```
-"Hey Claw, say good morning in Arman's voice"
+"Say good morning in a male voice"
 "Read my latest email summary aloud"
 "Generate a voice note saying the meeting is at 3pm"
 ```
 
-### 🎙️ Speech-to-Text (Pulse)
+### Speech-to-Text (Pulse)
 ```
 "Transcribe this voice note" [attach audio]
 "What did they say in this recording? Include speaker labels"
 "Convert this meeting audio to text with timestamps"
 ```
 
-### 🌍 Multilingual
+### Multilingual
 ```
 "Say 'नमस्ते, कैसे हैं आप?' in Hindi"
-"Read this in French: Bonjour le monde"
+"Read this in Spanish: Hola, buenos días"
+"Say bonjour le monde in French"
 ```
+
+### Voice Note Loop
+Send a WhatsApp voice note → Pulse transcribes it → agent processes → replies as a voice note via Lightning. Full voice-in, voice-out.
 
 ## Voices
 
-| Voice | Style | Best For |
-|-------|-------|----------|
-| `emily` | Female, neutral | General use (default) |
-| `jasmine` | Female, warm | Storytelling, greetings |
-| `arman` | Male, professional | Reports, briefings |
-| `arnav` | Male, conversational | Casual updates |
-| `mithali` | Female, Hindi-native | Hindi, code-switching |
+| Voice | Gender | Accent | Best For |
+|-------|--------|--------|----------|
+| `diana` | Female | American | General use (default) |
+| `vincent` | Male | American | Announcements, briefings |
+| `advika` | Female | Indian | Hindi, code-switching |
+| `vivaan` | Male | Indian | Bilingual English/Hindi |
+| `camilla` | Female | Mexican/Latin | Spanish content |
+| `zara` | Female | American | Conversational |
+| `melody` | Female | American | Storytelling |
+| `robert` | Male | American | Professional, reports |
+| `arjun` | Male | Indian | English/Hindi bilingual |
+| `stella` | Female | American | Expressive, warm |
 
-## Configuration
-
-Add to your `openclaw.json` to set as default TTS:
-
-```json
-{
-  "skills": {
-    "entries": {
-      "smallest-ai": {
-        "apiKey": "your_smallest_api_key"
-      }
-    }
-  }
-}
-```
-
-### Use with Cron/Heartbeat
-
-Add to your `HEARTBEAT.md`:
-```markdown
-- Every morning at 8am, summarize today's calendar and read it aloud using smallest-ai TTS
-- When a high-priority Slack message arrives, generate a voice alert
-```
+80+ more voices available — the agent auto-selects based on language and gender preference.
 
 ## File Structure
 
@@ -117,23 +104,28 @@ Optional: `pip install smallestai` for the official SDK with async support and s
 
 ## Examples
 
+### Voice Note Loop (WhatsApp)
+```
+Send a voice note saying "summarize my day" →
+Agent transcribes → processes → replies with voice note
+```
+
 ### Morning Briefing Agent
 ```
 "Every morning at 7am, check my calendar and email,
  summarize the day ahead, and read it to me on WhatsApp
- using the arman voice"
+ using the vincent voice"
+```
+
+### Hindi/English Code-Switching
+```
+"Hey, mujhe aaj ke weather ka summary do in advika's voice"
 ```
 
 ### Meeting Transcription
 ```
 "Transcribe this meeting recording, identify who said what,
  and create a summary with action items"
-```
-
-### Multilingual Newsletter
-```
-"Take my latest blog post and create audio versions
- in English, Hindi, and Spanish"
 ```
 
 ## Pricing
@@ -151,7 +143,7 @@ Optional: `pip install smallestai` for the official SDK with async support and s
 - [API Docs](https://waves-docs.smallest.ai) — Full documentation
 - [Python SDK](https://github.com/smallest-inc/smallest-python-sdk) — Official SDK
 - [OpenClaw](https://openclaw.ai) — OpenClaw main site
-- [ClawHub](https://clawhub.com) — Skills marketplace
+- [ClawHub](https://clawhub.ai) — Skills marketplace
 
 ## Contributing
 

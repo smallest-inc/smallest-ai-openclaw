@@ -1,28 +1,56 @@
-# Smallest AI — Voice Catalog
+# Smallest AI — Voice Catalog (Lightning v3.1)
 
-## Lightning Model Voices
+## English
 
-### English
+| Voice ID   | Gender | Style                | Accent   | Best For                         |
+|------------|--------|----------------------|----------|----------------------------------|
+| diana      | Female | Neutral, clear       | American | General use (default)            |
+| vincent    | Male   | Conversational       | American | Announcements, briefings         |
+| zara       | Female | Conversational       | American | Casual, friendly                 |
+| melody     | Female | Warm, expressive     | American | Storytelling, greetings          |
+| stella     | Female | Expressive, warm     | American | Narration, reading               |
+| robert     | Male   | Professional         | American | News, reports, formal briefings  |
+| edward     | Male   | Professional         | British  | Formal, authoritative            |
+| brooke     | Female | Conversational       | American | Casual updates                   |
 
-| Voice ID  | Gender | Style                | Accent   | Best For                         |
-|-----------|--------|----------------------|----------|----------------------------------|
-| emily     | Female | Neutral, clear       | American | General use, announcements       |
-| jasmine   | Female | Warm, expressive     | American | Storytelling, greetings, reading |
-| arman     | Male   | Professional, deep   | American | News, reports, formal briefings  |
-| arnav     | Male   | Conversational       | Indian   | Casual updates, reminders        |
+## Hindi / Bilingual
 
-### Hindi
+| Voice ID   | Gender | Style              | Accent     | Best For                       |
+|------------|--------|--------------------|------------|--------------------------------|
+| advika     | Female | Natural, clear     | Indian     | Hindi content, code-switching  |
+| vivaan     | Male   | Conversational     | Indian     | Bilingual English/Hindi        |
+| arjun      | Male   | Professional       | Indian     | English/Hindi bilingual        |
+| aisha      | Female | Warm               | Indian     | Hindi content                  |
 
-| Voice ID  | Gender | Style              | Accent     | Best For                       |
-|-----------|--------|--------------------|------------|--------------------------------|
-| mithali   | Female | Natural, clear     | Native     | Hindi content, code-switching  |
+## Spanish
+
+| Voice ID   | Gender | Style              | Accent        | Best For                    |
+|------------|--------|--------------------|---------------|-----------------------------|
+| camilla    | Female | Natural            | Mexican/Latin | Spanish content              |
+| carlos     | Male   | Professional       | Mexican/Latin | Spanish content              |
+| luis       | Male   | Conversational     | Mexican/Latin | Casual Spanish               |
+
+## Tamil
+
+| Voice ID   | Gender | Style              | Accent     | Best For                    |
+|------------|--------|--------------------|------------|-----------------------------|
+| anitha     | Female | Natural            | Tamil      | Tamil content                |
+| raju       | Male   | Conversational     | Tamil      | Tamil content                |
+
+80+ more voices available. Fetch the full list via API:
+```bash
+curl -s "https://api.smallest.ai/waves/v1/lightning-v3.1/get_voices" \
+  -H "Authorization: Bearer $SMALLEST_API_KEY" | python3 -m json.tool
+```
 
 ## Voice Selection Tips
 
-- **Briefings & reports**: Use `arman` for authoritative tone
-- **Friendly updates**: Use `jasmine` or `arnav` for warmth
-- **Default/neutral**: Use `emily` when unsure
-- **Hindi content**: Use `mithali` — also handles Hindi-English code-switching well
+- **Default/neutral**: Use `diana` when unsure
+- **Male default**: Use `vincent` for general male voice
+- **Briefings & reports**: Use `robert` or `edward` for authoritative tone
+- **Friendly updates**: Use `melody` or `zara` for warmth
+- **Hindi content**: Use `advika` (female) or `vivaan` (male)
+- **Spanish content**: Use `camilla` (female) or `carlos` (male)
 - **Speed adjustment**: Professional content at 1.0x, casual at 1.1-1.3x
 
 ## Voice Cloning
@@ -39,4 +67,4 @@ https://waves.smallest.ai
 | 8000 Hz     | Phone       | Smallest  | IVR, telephony, voice bots        |
 | 16000 Hz    | Standard    | Small     | Voice assistants, transcription    |
 | 24000 Hz    | High        | Medium    | General use, voice notes (default) |
-| 48000 Hz    | Studio      | Large     | Podcasts, audiobooks, production   |
+| 44100 Hz    | Studio      | Large     | Podcasts, audiobooks, production   |
