@@ -22,19 +22,45 @@ Text-to-speech (sub-100ms) via Lightning v3.1 and speech-to-text (64ms TTFT) via
 ## Setup
 
 1. Get API key from https://waves.smallest.ai → click "API Key" in left panel
-2. Set `SMALLEST_API_KEY` in environment or openclaw.json:
+2. Configure in openclaw.json:
 
 ```json
 {
   "skills": {
     "entries": {
       "smallest-ai": {
-        "apiKey": "your_key_here"
+        "apiKey": "your_key_here",
+        "defaultVoiceMale": "vincent",
+        "defaultVoiceFemale": "diana",
+        "defaultLanguage": "en",
+        "defaultSpeed": 1.0,
+        "defaultSampleRate": 24000
       }
     }
   }
 }
 ```
+
+The agent MUST read the user's config from `skills.entries.smallest-ai` in openclaw.json to determine defaults. If no config is set, use these defaults:
+- `defaultVoiceFemale`: `diana`
+- `defaultVoiceMale`: `vincent`
+- `defaultLanguage`: `en`
+- `defaultSpeed`: `1.0`
+- `defaultSampleRate`: `24000`
+
+## Voice Selection Rules
+
+Follow these rules to select the voice:
+
+1. If user explicitly names a voice (e.g. "use advika"), use that voice.
+2. If user asks for a **male** voice, use the configured `defaultVoiceMale`.
+3. If user asks for a **female** voice, use the configured `defaultVoiceFemale`.
+4. If no gender preference, use `defaultVoiceFemale` (diana by default).
+5. For **Hindi** content: use `advika` (female) or `vivaan` (male).
+6. For **Spanish** content: use `camilla` (female) or `carlos` (male).
+7. For **Tamil** content: use `anitha` (female) or `raju` (male).
+
+Always pass the configured `defaultLanguage`, `defaultSpeed`, and `defaultSampleRate` as `--lang`, `--speed`, and `--rate` flags unless the user overrides them.
 
 ## Text-to-Speech
 
