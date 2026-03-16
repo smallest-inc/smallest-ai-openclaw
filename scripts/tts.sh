@@ -7,7 +7,7 @@ set -euo pipefail
 #
 # Usage:
 #   tts.sh "Hello world"
-#   tts.sh "Hello world" --voice vincent --rate 24000 --speed 1.2
+#   tts.sh "Hello world" --voice robert --rate 24000 --speed 1.2
 #   tts.sh "नमस्ते दुनिया" --voice advika --lang hi
 #
 # Output: MEDIA: <path_to_wav_file>
@@ -21,7 +21,7 @@ Smallest AI TTS — Lightning Model
 Usage: tts.sh "text" [options]
 
 Options:
-  --voice <id>     Voice: diana|vincent|advika|vivaan|camilla (default: diana)
+  --voice <id>     Voice: sophia|robert|advika|vivaan|camilla (default: sophia)
   --rate  <hz>     Sample rate: 8000|16000|24000|48000 (default: 24000)
   --speed <n>      Speed: 0.5-2.0 (default: 1.0)
   --lang  <code>   Language: en|hi|es|fr|de|ja|ko|zh|... (default: en)
@@ -30,7 +30,7 @@ Options:
 
 Examples:
   tts.sh "Good morning! Here is your daily briefing."
-  tts.sh "Meeting starts in 5 minutes" --voice vincent --speed 1.3
+  tts.sh "Meeting starts in 5 minutes" --voice robert --speed 1.3
   tts.sh "आज का मौसम बहुत अच्छा है" --voice advika --lang hi
 
 Environment:
@@ -42,7 +42,7 @@ fi
 TEXT="$1"
 shift
 
-VOICE="diana"
+VOICE="sophia"
 RATE=24000
 SPEED=1.0
 LANG="en"

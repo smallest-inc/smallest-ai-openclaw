@@ -62,14 +62,13 @@ Send a WhatsApp voice note → Pulse transcribes it → agent processes → repl
 
 | Voice | Gender | Accent | Best For |
 |-------|--------|--------|----------|
-| `diana` | Female | American | General use (default) |
-| `vincent` | Male | American | Announcements, briefings |
+| `sophia` | Female | American | General use (default) |
+| `robert` | Male | American | Professional, reports (default) |
 | `advika` | Female | Indian | Hindi, code-switching |
 | `vivaan` | Male | Indian | Bilingual English/Hindi |
 | `camilla` | Female | Mexican/Latin | Spanish content |
 | `zara` | Female | American | Conversational |
 | `melody` | Female | American | Storytelling |
-| `robert` | Male | American | Professional, reports |
 | `arjun` | Male | Indian | English/Hindi bilingual |
 | `stella` | Female | American | Expressive, warm |
 
@@ -114,7 +113,7 @@ Agent transcribes → processes → replies with voice note
 ```
 "Every morning at 7am, check my calendar and email,
  summarize the day ahead, and read it to me on WhatsApp
- using the vincent voice"
+ using the robert voice"
 ```
 
 ### Hindi/English Code-Switching

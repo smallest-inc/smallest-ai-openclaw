@@ -5,7 +5,7 @@ description: >
   Use when the user wants to generate speech, convert text to voice, read text aloud,
   create voice notes, transcribe audio to text, or clone a voice.
   Sub-100ms latency TTS. 64ms TTFT STT. Supports 30+ languages including Hindi and Spanish.
-  Voices include diana, vincent, advika, vivaan, camilla, and 80+ more.
+  Voices include sophia, robert, advika, vivaan, camilla, and 80+ more.
 metadata:
   openclaw:
     emoji: "⚡"
@@ -29,8 +29,8 @@ export SMALLEST_API_KEY="your_key_here"
 
 ## Defaults
 
-- Default female voice: `diana` (American English)
-- Default male voice: `vincent` (American English)
+- Default female voice: `sophia` (American English)
+- Default male voice: `robert` (American English)
 - Default language: `en`
 - Default speed: `1.0`
 - Default sample rate: `24000`
@@ -42,7 +42,7 @@ Follow these rules to select the voice:
 1. If user explicitly names a voice (e.g. "use advika"), use that voice.
 2. If user asks for a **male** voice, use the configured `defaultVoiceMale`.
 3. If user asks for a **female** voice, use the configured `defaultVoiceFemale`.
-4. If no gender preference, use `defaultVoiceFemale` (diana by default).
+4. If no gender preference, use `defaultVoiceFemale` (sophia by default).
 5. For **Hindi** content: use `advika` (female) or `vivaan` (male).
 6. For **Spanish** content: use `camilla` (female) or `carlos` (male).
 7. For **Tamil** content: use `anitha` (female) or `raju` (male).
@@ -56,27 +56,26 @@ Generate speech audio from text using Lightning v3.1 model.
 ### Shell (preferred — zero dependencies)
 
 ```bash
-{baseDir}/scripts/tts.sh "Text to speak" --voice diana --rate 24000 --speed 1.0 --lang en
+{baseDir}/scripts/tts.sh "Text to speak" --voice sophia --rate 24000 --speed 1.0 --lang en
 ```
 
 ### Python (requires `pip install smallestai` or just `requests`)
 
 ```bash
-python3 {baseDir}/scripts/tts.py "Text to speak" --voice diana --speed 1.0 --lang en --out speech.wav
+python3 {baseDir}/scripts/tts.py "Text to speak" --voice sophia --speed 1.0 --lang en --out speech.wav
 ```
 
 ### Voices
 
 | Voice     | Gender | Accent          | Best For                    |
 |-----------|--------|-----------------|-----------------------------|
-| diana     | Female | American        | General use (default)       |
-| vincent   | Male   | American        | Announcements, briefings    |
+| sophia    | Female | American        | General use (default)       |
+| robert    | Male   | American        | Professional, reports (default) |
 | advika    | Female | Indian          | Hindi content, code-switch  |
 | vivaan    | Male   | Indian          | Bilingual English/Hindi     |
 | camilla   | Female | Mexican/Latin   | Spanish content             |
 | zara      | Female | American        | Conversational              |
 | melody    | Female | American        | Storytelling, greetings     |
-| robert    | Male   | American        | Professional, reports       |
 | arjun     | Male   | Indian          | English/Hindi bilingual     |
 | stella    | Female | American        | Expressive, warm            |
 
@@ -84,7 +83,7 @@ python3 {baseDir}/scripts/tts.py "Text to speak" --voice diana --speed 1.0 --lan
 
 ### Options
 
-- `--voice <id>`: Voice identifier (default: diana)
+- `--voice <id>`: Voice identifier (default: sophia)
 - `--rate <hz>`: Sample rate — 8000 | 16000 | 24000 | 44100 (default: 24000)
 - `--speed <n>`: Playback speed 0.5–2.0 (default: 1.0)
 - `--lang <code>`: Language code (default: en). See `{baseDir}/references/languages.md`
@@ -100,7 +99,7 @@ Supports 30+ languages. Pass `--lang` with ISO code:
 
 ```bash
 {baseDir}/scripts/tts.sh "नमस्ते, कैसे हैं आप?" --voice advika --lang hi
-{baseDir}/scripts/tts.sh "Bonjour le monde" --voice diana --lang fr
+{baseDir}/scripts/tts.sh "Bonjour le monde" --voice sophia --lang fr
 {baseDir}/scripts/tts.sh "Hola, buenos días" --voice camilla --lang es
 ```
 

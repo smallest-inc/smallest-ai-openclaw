@@ -4,12 +4,11 @@
 
 | Voice ID   | Gender | Style                | Accent   | Best For                         |
 |------------|--------|----------------------|----------|----------------------------------|
-| diana      | Female | Neutral, clear       | American | General use (default)            |
-| vincent    | Male   | Conversational       | American | Announcements, briefings         |
+| sophia     | Female | Neutral, clear       | American | General use (default)            |
+| robert     | Male   | Professional         | American | Professional, reports (default)  |
 | zara       | Female | Conversational       | American | Casual, friendly                 |
 | melody     | Female | Warm, expressive     | American | Storytelling, greetings          |
 | stella     | Female | Expressive, warm     | American | Narration, reading               |
-| robert     | Male   | Professional         | American | News, reports, formal briefings  |
 | edward     | Male   | Professional         | British  | Formal, authoritative            |
 | brooke     | Female | Conversational       | American | Casual updates                   |
 
@@ -45,8 +44,8 @@ curl -s "https://api.smallest.ai/waves/v1/lightning-v3.1/get_voices" \
 
 ## Voice Selection Tips
 
-- **Default/neutral**: Use `diana` when unsure
-- **Male default**: Use `vincent` for general male voice
+- **Default/neutral**: Use `sophia` when unsure
+- **Male default**: Use `robert` for general male voice
 - **Briefings & reports**: Use `robert` or `edward` for authoritative tone
 - **Friendly updates**: Use `melody` or `zara` for warmth
 - **Hindi content**: Use `advika` (female) or `vivaan` (male)

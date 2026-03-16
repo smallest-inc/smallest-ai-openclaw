@@ -120,13 +120,13 @@ Examples:
   %(prog)s "आज का मौसम अच्छा है" --voice mithali --lang hi
   %(prog)s "Long text here" --out /tmp/narration.wav --rate 48000
 
-Voices: diana, vincent, advika, vivaan, camilla
+Voices: sophia, robert, advika, vivaan, camilla
 Languages: en, hi, es, fr, de, ja, ko, zh, pt, ar, and 20+ more
         """,
     )
     parser.add_argument("text", help="Text to convert to speech")
-    parser.add_argument("--voice", default="diana",
-                        help="Voice ID (default: emily)")
+    parser.add_argument("--voice", default="sophia",
+                        help="Voice ID (default: sophia)")
     parser.add_argument("--speed", type=float, default=1.0,
                         help="Speed 0.5-2.0 (default: 1.0)")
     parser.add_argument("--rate", type=int, default=24000,
