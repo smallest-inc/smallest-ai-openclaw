@@ -6,9 +6,9 @@
 |------------|--------|----------------------|----------|----------------------------------|
 | sophia     | Female | Neutral, clear       | American | General use (default)            |
 | robert     | Male   | Professional         | American | Professional, reports (default)  |
-| zara       | Female | Conversational       | American | Casual, friendly                 |
-| melody     | Female | Warm, expressive     | American | Storytelling, greetings          |
-| stella     | Female | Expressive, warm     | American | Narration, reading               |
+| ella       | Female | Conversational       | American | Casual, friendly                 |
+| mia     | Female | Warm, expressive     | American | Storytelling, greetings          |
+| vanessa     | Female | Expressive, warm     | American | Narration, reading               |
 | edward     | Male   | Professional         | British  | Formal, authoritative            |
 | brooke     | Female | Conversational       | American | Casual updates                   |
 
@@ -47,7 +47,7 @@ curl -s "https://api.smallest.ai/waves/v1/lightning-v3.1/get_voices" \
 - **Default/neutral**: Use `sophia` when unsure
 - **Male default**: Use `robert` for general male voice
 - **Briefings & reports**: Use `robert` or `edward` for authoritative tone
-- **Friendly updates**: Use `melody` or `zara` for warmth
+- **Friendly updates**: Use `mia` or `ella` for warmth
 - **Hindi content**: Use `advika` (female) or `vivaan` (male)
 - **Spanish content**: Use `camilla` (female) or `carlos` (male)
 - **Speed adjustment**: Professional content at 1.0x, casual at 1.1-1.3x

@@ -74,10 +74,10 @@ python3 {baseDir}/scripts/tts.py "Text to speak" --voice sophia --speed 1.0 --la
 | advika    | Female | Indian          | Hindi content, code-switch  |
 | vivaan    | Male   | Indian          | Bilingual English/Hindi     |
 | camilla   | Female | Mexican/Latin   | Spanish content             |
-| zara      | Female | American        | Conversational              |
-| melody    | Female | American        | Storytelling, greetings     |
+| ella      | Female | American        | Conversational              |
+| mia    | Female | American        | Storytelling, greetings     |
 | arjun     | Male   | Indian          | English/Hindi bilingual     |
-| stella    | Female | American        | Expressive, warm            |
+| vanessa    | Female | American        | Expressive, warm            |
 
 80+ more voices available. List all with: `{baseDir}/scripts/voices.sh`
 

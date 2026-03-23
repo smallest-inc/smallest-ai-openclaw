@@ -67,10 +67,10 @@ Send a WhatsApp voice note → Pulse transcribes it → agent processes → repl
 | `advika` | Female | Indian | Hindi, code-switching |
 | `vivaan` | Male | Indian | Bilingual English/Hindi |
 | `camilla` | Female | Mexican/Latin | Spanish content |
-| `zara` | Female | American | Conversational |
-| `melody` | Female | American | Storytelling |
+| `ella` | Female | American | Conversational |
+| `mia` | Female | American | Storytelling |
 | `arjun` | Male | Indian | English/Hindi bilingual |
-| `stella` | Female | American | Expressive, warm |
+| `vanessa` | Female | American | Expressive, warm |
 
 80+ more voices available — the agent auto-selects based on language and gender preference.
 
