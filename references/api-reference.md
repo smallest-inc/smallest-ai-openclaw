@@ -146,4 +146,4 @@ audio = await client.synthesize("Hello", speed=1.5, sample_rate=16000)
 | Basic    | $5/mo    | 3 hours   | 1            | Included         |
 | Premium  | $29/mo   | 24 hours  | 2            | Included         |
 
-Full docs: https://waves-docs.smallest.ai
+Full docs: https://docs.smallest.ai/waves

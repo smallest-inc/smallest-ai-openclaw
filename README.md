@@ -139,7 +139,7 @@ Agent transcribes → processes → replies with voice note
 
 - [Smallest AI](https://smallest.ai) — Main site
 - [Waves Console](https://waves.smallest.ai) — Get API key
-- [API Docs](https://waves-docs.smallest.ai) — Full documentation
+- [API Docs](https://docs.smallest.ai/waves) — Full documentation
 - [Python SDK](https://github.com/smallest-inc/smallest-python-sdk) — Official SDK
 - [OpenClaw](https://openclaw.ai) — OpenClaw main site
 - [ClawHub](https://clawhub.ai) — Skills marketplace

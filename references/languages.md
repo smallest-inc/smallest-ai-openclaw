@@ -50,4 +50,4 @@ tts.sh "Let's go to the fiesta tonight" --lang es
 - Set `--lang` to the primary language of the text
 - For code-switching, use the language of the majority content
 - Regional accents are automatically handled based on voice selection
-- New languages are added regularly — check waves-docs.smallest.ai
+- New languages are added regularly — check docs.smallest.ai/waves

@@ -32,7 +32,7 @@ USAGE
 NOTES
 ─────
   • Voice cloning available on Basic plan ($5/mo) and above
-  • New voices added regularly — check https://waves-docs.smallest.ai
+  • New voices added regularly — check https://docs.smallest.ai/waves
   • For voice cloning, use the Smallest AI console at https://waves.smallest.ai
 
 EOF
